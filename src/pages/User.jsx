@@ -1,7 +1,6 @@
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
 import { useEffect, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import Spinner from "../components/layout/Spinner";
 import RepoList from "../components/repos/RepoList";
 import GithubContext from "../context/github/GithubContext";
 import { getUserAndRepos } from "../context/github/GithubActions";
@@ -39,7 +38,7 @@ const User = () => {
   } = user;
 
   if (loading) {
-    return <Spinner />;
+    return <span className="loader"></span>;
   }
 
   // NOTE: check for valid url to users website
